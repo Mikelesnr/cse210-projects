@@ -17,6 +17,7 @@ class Program
 
         var reference = new Reference(book, chapter, verse, endVerse);
         string url = reference.GetUrl();
+        string _reference = reference.GetScripture();
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         using (var client = new HttpClient())
@@ -27,7 +28,30 @@ class Program
 
             var responseObject = JsonSerializer.Deserialize<BibleResponse>(result, options);
             String text = responseObject.text;
-            Console.Write(text);
+            var scripture = new Scripture(_reference, text);
+            // Console.WriteLine(scripture.GetDisplayText());
+            bool loop = true;
+            while (loop)
+            {
+                Console.Write("Please press Enter to continue or Q to quit: ");
+                ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
+                char keyChar = keyInfo.KeyChar;
+
+                if (keyChar == 'q' || keyChar == 'Q')
+                {
+                    loop = false;
+                }
+                if (scripture.IsCompletelyHidden())
+                {
+                    loop = false;
+                }
+
+                scripture.HideRandomWords();
+                Console.Clear();
+                Console.WriteLine(scripture.GetDisplayText());
+
+            }
+
         }
     }
 

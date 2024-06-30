@@ -19,4 +19,9 @@ class Reference
     {
         return $"https://bible-api.com/{_book}+{_chapter}:{_verse}-{_endVerse}";
     }
+
+    public string GetScripture()
+    {
+        return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+    }
 }
