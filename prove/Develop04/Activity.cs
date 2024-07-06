@@ -5,7 +5,7 @@ public class Activity
 {
     private string _startingMessage;
     private string _endingMessage;
-    private string _activityDescription;
+    private string _description;
     private string _activityName;
     static int _spinnerCounter = 0;
     static int _duration = 0;
@@ -20,9 +20,9 @@ public class Activity
     {
         _activityName = activityName;
     }
-    public void SetActivityDescription(string activityDescription)
+    public void SetActivityDescription(string description)
     {
-        _activityDescription = activityDescription;
+        _description = description;
     }
 
     public int GetDuration()
@@ -38,7 +38,7 @@ public class Activity
 
     public void DisplayDescription()
     {
-        Console.WriteLine(_activityDescription);
+        Console.WriteLine(_description);
         Console.WriteLine();
     }
     public void DisplayEndingMessage()
@@ -86,13 +86,13 @@ public class Activity
         }
     }
 
-    public void DisplayDuration()
+    public void SetDuration()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
     }
 
-    public void DisplayGetReady()
+    public void DisplayReady()
     {
         Console.WriteLine("Get ready...");
         DisplaySpinner(5);
@@ -102,8 +102,8 @@ public class Activity
     {
         DisplayStartingtMessage();
         DisplayDescription();
-        DisplayDuration();
-        DisplayGetReady();
+        SetDuration();
+        DisplayReady();
         Console.Clear();
     }
 
