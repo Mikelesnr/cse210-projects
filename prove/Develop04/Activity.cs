@@ -16,6 +16,16 @@ public class Activity
         _spinnerCounter = _duration = 0;
     }
 
+    public void SetDuration()
+    {
+        Console.Write("How long, in seconds, would you like for your session? ");
+        _duration = int.Parse(Console.ReadLine());
+    }
+    public int GetDuration()
+    {
+        return _duration;
+    }
+
     public void SetActivityName(string activityName)
     {
         _activityName = activityName;
@@ -25,10 +35,6 @@ public class Activity
         _description = description;
     }
 
-    public int GetDuration()
-    {
-        return _duration;
-    }
     public void DisplayStartingtMessage()
     {
         _startingMessage = $"Welcome to the {_activityName}.";
@@ -84,12 +90,6 @@ public class Activity
             Console.SetCursorPosition(0, Console.CursorTop);
             Thread.Sleep(1000);
         }
-    }
-
-    public void SetDuration()
-    {
-        Console.Write("How long, in seconds, would you like for your session? ");
-        _duration = int.Parse(Console.ReadLine());
     }
 
     public void DisplayReady()
