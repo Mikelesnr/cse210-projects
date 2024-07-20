@@ -62,7 +62,7 @@ class GoalManager
 
         foreach (Goal goal in _allGoals)
         {
-            saveGoals.Add(goal.ToCSVRecord());
+            saveGoals.Add(goal.ToCSV());
         }
 
         SaveLoad.SaveToCSV(saveGoals, fileToSave);

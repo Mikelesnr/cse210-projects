@@ -70,7 +70,7 @@ public class CheckListGoal : Goal
         return _goalComplete;
     }
 
-    public override string ToCSVRecord()
+    public override string ToCSV()
     {
         return $"{_goalType}|{GetGoalName()}|{GetGoalDescription()}|{GetPoints()}|{GetGoalTimes()}|{GetRunningTimes()}|{GetGoalBonus()}|{_goalComplete}";
     }

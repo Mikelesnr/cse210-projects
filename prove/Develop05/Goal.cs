@@ -48,7 +48,7 @@ public class Goal
         return false;
     }
 
-    public virtual string ToCSVRecord()
+    public virtual string ToCSV()
     {
         return "";
     }

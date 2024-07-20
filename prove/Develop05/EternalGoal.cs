@@ -38,7 +38,7 @@ public class EternalGoal : Goal
         return _goalComplete;
     }
 
-    public override string ToCSVRecord()
+    public override string ToCSV()
     {
         return $"{_goalType}|{GetGoalName()}|{GetGoalDescription()}|{GetGoalPoints()}|{GetRunningTotal()}|{_goalComplete}";
     }

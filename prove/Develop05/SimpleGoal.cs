@@ -31,7 +31,7 @@ class SimpleGoal : Goal
         return _goalComplete;
     }
 
-    public override string ToCSVRecord()
+    public override string ToCSV()
     {
         return $"{_goalType}|{GetGoalName()}|{GetGoalDescription()}|{GetGoalPoints()}|{_goalComplete}";
     }
